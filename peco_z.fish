@@ -5,7 +5,7 @@ function peco_z
     set peco_flags --query "$query"
   end
 
-  z -l | peco $peco_flags | awk '{ print $2 }' | read recent
+  z -l | awk '{ print $2 }' | peco $peco_flags | read recent
   if [ $recent ]
       cd $recent
       commandline -r ''
